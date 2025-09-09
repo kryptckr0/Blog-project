@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="careerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f5576c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4facfe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pathGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#careerBg)"/>
+  
+  <!-- Career path arrow -->
+  <path d="M50 350 Q200 250 400 300 Q600 350 750 200" stroke="url(#pathGlow)" stroke-width="8" fill="none" opacity="0.6"/>
+  
+  <!-- Career stages -->
+  <g>
+    <!-- Stage 1: Technicien IT -->
+    <g transform="translate(80, 330)">
+      <circle cx="0" cy="0" r="40" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="3"/>
+      <circle cx="0" cy="0" r="25" fill="rgba(255,255,255,0.9)"/>
+      
+      <!-- Computer icon -->
+      <rect x="-12" y="-8" width="24" height="16" rx="2" fill="#3b82f6"/>
+      <rect x="-10" y="-6" width="20" height="12" rx="1" fill="white"/>
+      <rect x="-8" y="10" width="16" height="2" rx="1" fill="#3b82f6"/>
+      
+      <text x="0" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">Technicien IT</text>
+      <text x="0" y="70" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">2-5 ans</text>
+    </g>
+    
+    <!-- Stage 2: Junior DevOps -->
+    <g transform="translate(280, 280)">
+      <circle cx="0" cy="0" r="45" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="rgba(255,255,255,0.9)"/>
+      
+      <!-- Docker + Git icons -->
+      <rect x="-15" y="-8" width="12" height="8" rx="2" fill="#22c55e"/>
+      <text x="-9" y="-2" text-anchor="middle" fill="white" font-family="Arial" font-size="6">D</text>
+      <circle cx="8" cy="-4" r="6" fill="none" stroke="#22c55e" stroke-width="2"/>
+      <path d="M3 -4 L13 -4" stroke="#22c55e" stroke-width="1"/>
+      
+      <text x="0" y="60" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">Junior DevOps</text>
+      <text x="0" y="75" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">6-12 mois</text>
+      
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Stage 3: DevOps Engineer -->
+    <g transform="translate(500, 320)">
+      <circle cx="0" cy="0" r="50" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7" stroke-width="3"/>
+      <circle cx="0" cy="0" r="35" fill="rgba(255,255,255,0.9)"/>
+      
+      <!-- Kubernetes wheel -->
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#a855f7" stroke-width="2"/>
+      <g stroke="#a855f7" stroke-width="2">
+        <line x1="0" y1="-18" x2="0" y2="18"/>
+        <line x1="-18" y1="0" x2="18" y2="0"/>
+        <line x1="-12.7" y1="-12.7" x2="12.7" y2="12.7"/>
+        <line x1="-12.7" y1="12.7" x2="12.7" y2="-12.7"/>
+      </g>
+      <circle cx="0" cy="0" r="4" fill="#a855f7"/>
+      
+      <text x="0" y="65" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">DevOps Engineer</text>
+      <text x="0" y="80" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">1-2 ans</text>
+      
+      <animateTransform attributeName="transform" type="rotate" values="0 500 320;360 500 320" dur="15s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Stage 4: Senior DevOps -->
+    <g transform="translate(720, 220)">
+      <circle cx="0" cy="0" r="55" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.9)"/>
+      
+      <!-- Cloud architecture -->
+      <path d="M-15 -5 Q-20 -10 -15 -15 Q-10 -20 -5 -15 Q0 -20 5 -15 Q10 -20 15 -15 Q20 -10 15 -5 Z" fill="#ef4444"/>
+      <text x="0" y="0" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">☁</text>
+      <circle cx="-20" cy="8" r="3" fill="#ef4444"/>
+      <circle cx="0" cy="12" r="3" fill="#ef4444"/>
+      <circle cx="20" cy="8" r="3" fill="#ef4444"/>
+      
+      <text x="0" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">Senior DevOps</text>
+      <text x="0" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">Expert</text>
+    </g>
+  </g>
+  
+  <!-- Skills progression -->
+  <g transform="translate(50, 50)">
+    <text x="0" y="0" fill="white" font-family="Arial" font-size="16" font-weight="bold">Évolution des Compétences</text>
+    
+    <!-- Skill bars -->
+    <g transform="translate(0, 30)">
+      <!-- Linux -->
+      <text x="0" y="15" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="12">Linux</text>
+      <rect x="60" y="5" width="200" height="12" rx="6" fill="rgba(255,255,255,0.2)"/>
+      <rect x="60" y="5" width="160" height="12" rx="6" fill="#22c55e">
+        <animate attributeName="width" values="0;160" dur="3s" begin="1s" fill="freeze"/>
+      </rect>
+      
+      <!-- Cloud -->
+      <text x="0" y="35" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="12">Cloud</text>
+      <rect x="60" y="25" width="200" height="12" rx="6" fill="rgba(255,255,255,0.2)"/>
+      <rect x="60" y="25" width="180" height="12" rx="6" fill="#3b82f6">
+        <animate attributeName="width" values="0;180" dur="3s" begin="1.5s" fill="freeze"/>
+      </rect>
+      
+      <!-- Containers -->
+      <text x="0" y="55" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="12">Containers</text>
+      <rect x="60" y="45" width="200" height="12" rx="6" fill="rgba(255,255,255,0.2)"/>
+      <rect x="60" y="45" width="170" height="12" rx="6" fill="#a855f7">
+        <animate attributeName="width" values="0;170" dur="3s" begin="2s" fill="freeze"/>
+      </rect>
+      
+      <!-- CI/CD -->
+      <text x="0" y="75" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="12">CI/CD</text>
+      <rect x="60" y="65" width="200" height="12" rx="6" fill="rgba(255,255,255,0.2)"/>
+      <rect x="60" y="65" width="150" height="12" rx="6" fill="#f59e0b">
+        <animate attributeName="width" values="0;150" dur="3s" begin="2.5s" fill="freeze"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Time indicators -->
+  <g>
+    <circle cx="150" cy="380" r="2" fill="#fbbf24">
+      <animate attributeName="cx" values="150;720" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="50" y="395" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">Temps</text>
+    <text x="720" y="395" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10">18-24 mois</text>
+  </g>
+  
+  <!-- Achievement badges -->
+  <g transform="translate(400, 80)" opacity="0.8">
+    <!-- Certification badge -->
+    <circle cx="0" cy="0" r="20" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2"/>
+    <path d="M-8 -8 L-3 3 L8 -5" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    <text x="0" y="35" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="9">Certifications</text>
+    
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Success metrics -->
+  <g transform="translate(650, 80)">
+    <text x="0" y="0" fill="white" font-family="Arial" font-size="14" font-weight="bold">💰 Salaire</text>
+    <text x="0" y="20" fill="#22c55e" font-family="Arial" font-size="12">28k → 65k €</text>
+    <text x="0" y="40" fill="white" font-family="Arial" font-size="14" font-weight="bold">📈 Croissance</text>
+    <text x="0" y="60" fill="#3b82f6" font-family="Arial" font-size="12">+130%</text>
+  </g>
+  
+  <!-- Floating motivational elements -->
+  <g opacity="0.6">
+    <text x="120" y="180" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10" transform="rotate(-15)">Automatisation</text>
+    <text x="350" y="150" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10" transform="rotate(10)">Cloud Native</text>
+    <text x="580" y="120" fill="rgba(255,255,255,0.8)" font-family="Arial" font-size="10" transform="rotate(-10)">Architecture</text>
+  </g>
+</svg>

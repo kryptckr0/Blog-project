@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="ansibleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ee0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="serverGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ee0000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#ansibleBg)"/>
+  
+  <!-- Ansible Tower/Controller -->
+  <g transform="translate(400, 200)">
+    <!-- Main control node -->
+    <circle cx="0" cy="0" r="60" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Ansible logo style -->
+    <path d="M-15 -20 L15 20 M-15 20 L15 -20" stroke="#ee0000" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#ee0000" stroke-width="3"/>
+    
+    <text x="0" y="35" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" font-weight="bold">ANSIBLE</text>
+    
+    <!-- Pulsing animation -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" opacity="0.5">
+      <animate attributeName="r" values="60;80;60" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Managed Servers -->
+  <g>
+    <!-- Server 1 - Web Server -->
+    <g transform="translate(100, 100)">
+      <circle cx="0" cy="0" r="30" fill="url(#serverGlow)"/>
+      <rect x="-25" y="-20" width="50" height="40" rx="8" fill="rgba(59, 130, 246, 0.8)" stroke="#3b82f6"/>
+      <text x="0" y="-5" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">WEB</text>
+      <text x="0" y="8" text-anchor="middle" fill="white" font-family="Arial" font-size="8">nginx</text>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Server 2 - Database -->
+    <g transform="translate(700, 120)">
+      <circle cx="0" cy="0" r="30" fill="url(#serverGlow)"/>
+      <rect x="-25" y="-20" width="50" height="40" rx="8" fill="rgba(34, 197, 94, 0.8)" stroke="#22c55e"/>
+      <text x="0" y="-5" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">DB</text>
+      <text x="0" y="8" text-anchor="middle" fill="white" font-family="Arial" font-size="8">mysql</text>
+      <animate attributeName="opacity" values="1;0.7;1" dur="3.5s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Server 3 - App Server -->
+    <g transform="translate(150, 300)">
+      <circle cx="0" cy="0" r="30" fill="url(#serverGlow)"/>
+      <rect x="-25" y="-20" width="50" height="40" rx="8" fill="rgba(168, 85, 247, 0.8)" stroke="#a855f7"/>
+      <text x="0" y="-5" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">APP</text>
+      <text x="0" y="8" text-anchor="middle" fill="white" font-family="Arial" font-size="8">node.js</text>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Server 4 - Cache -->
+    <g transform="translate(650, 280)">
+      <circle cx="0" cy="0" r="30" fill="url(#serverGlow)"/>
+      <rect x="-25" y="-20" width="50" height="40" rx="8" fill="rgba(239, 68, 68, 0.8)" stroke="#ef4444"/>
+      <text x="0" y="-5" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">CACHE</text>
+      <text x="0" y="8" text-anchor="middle" fill="white" font-family="Arial" font-size="8">redis</text>
+      <animate attributeName="opacity" values="1;0.7;1" dur="2.5s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Playbook execution lines -->
+  <g stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-dasharray="8,4">
+    <!-- To Web Server -->
+    <line x1="340" y1="160" x2="130" y2="120">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- To Database -->
+    <line x1="460" y1="160" x2="670" y2="130">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- To App Server -->
+    <line x1="340" y1="240" x2="180" y2="280">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- To Cache -->
+    <line x1="460" y1="240" x2="620" y2="270">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Success indicators -->
+    <circle cx="235" cy="140" r="3" fill="#22c55e">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="565" cy="145" r="3" fill="#22c55e">
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="260" r="3" fill="#22c55e">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="540" cy="255" r="3" fill="#22c55e">
+      <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Labels -->
+  <text x="50" y="50" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="18" font-weight="bold">Ansible</text>
+  <text x="50" y="70" fill="rgba(255,255,255,0.7)" font-family="Arial" font-size="12">Automation Platform</text>
+  
+  <!-- Playbook representation -->
+  <g transform="translate(550, 50)" opacity="0.8">
+    <rect width="150" height="100" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.3)"/>
+    <text x="10" y="20" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="10">---</text>
+    <text x="10" y="35" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="10">- hosts: all</text>
+    <text x="10" y="50" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="10">  tasks:</text>
+    <text x="10" y="65" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="10">  - name: Deploy</text>
+    <text x="10" y="80" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="10">    service:</text>
+    <text x="75" y="15" fill="rgba(255,255,255,0.6)" font-family="Arial" font-size="8">playbook.yml</text>
+  </g>
+  
+  <!-- Floating automation elements -->
+  <g opacity="0.4">
+    <circle cx="300" cy="80" r="2" fill="#fbbf24">
+      <animate attributeName="cy" values="80;70;80" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="350" r="1.5" fill="#06d6a0">
+      <animate attributeName="cy" values="350;340;350" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="200" r="2.5" fill="#f72585">
+      <animate attributeName="cy" values="200;190;200" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introduction complète à Kubernetes pour les débutants - Concepts, installation et exemples pratiques">
+    <title>Introduction à Kubernetes pour les débutants | Tech & DevOps</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.7;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .article-meta {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .article-content h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .article-content h3 {
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        .article-content pre {
+            background: var(--dark-color);
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .article-content code {
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+        }
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        .highlight-box {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        .emoji-list {
+            list-style: none;
+            padding: 0;
+        }
+        .emoji-list li {
+            margin: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .article-nav {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1><a href="../index.html" style="text-decoration: none;"><span class="brand-tech">Tech</span><span class="brand-ops">&</span><span class="brand-devops">DevOps</span></a></h1>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html#accueil" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#metier" class="nav-link">Le Métier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#devops" class="nav-link">DevOps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#competences" class="nav-link">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="article-container">
+            <a href="../index.html#blog" class="back-link">← Retour au blog</a>
+            
+            <article class="article-header">
+                <h1 class="article-title">Introduction à Kubernetes pour les débutants</h1>
+                <div class="article-meta">
+                    <span>15 Décembre 2024</span> • <span class="blog-category">DevOps</span>
+                </div>
+            </article>
+
+            <div class="article-content">
+                <h2>Qu'est-ce que Kubernetes ?</h2>
+                <p>Kubernetes, souvent abrégé K8s, est une plateforme open-source d'orchestration de conteneurs qui automatise le déploiement, la mise à l'échelle et la gestion des applications conteneurisées. Développé à l'origine par Google et maintenant maintenu par la Cloud Native Computing Foundation (CNCF), Kubernetes est devenu l'outil de référence pour la gestion des conteneurs en production.</p>
+
+                <h2>Pourquoi Kubernetes ?</h2>
+
+                <h3>Les défis sans orchestration</h3>
+                <p>Avant Kubernetes, gérer des conteneurs en production était complexe :</p>
+                <ul>
+                    <li><strong>Gestion manuelle</strong> des conteneurs sur plusieurs serveurs</li>
+                    <li><strong>Pas de récupération automatique</strong> en cas de panne</li>
+                    <li><strong>Mise à l'échelle manuelle</strong> et fastidieuse</li>
+                    <li><strong>Gestion réseau complexe</strong> entre les conteneurs</li>
+                </ul>
+
+                <h3>Les avantages de Kubernetes</h3>
+                <div class="highlight-box">
+                    <ul class="emoji-list">
+                        <li>🚀 <strong>Orchestration automatique</strong> : Déploiement et gestion automatiques des conteneurs</li>
+                        <li>🔄 <strong>Auto-réparation</strong> : Redémarrage automatique des conteneurs défaillants</li>
+                        <li>📈 <strong>Mise à l'échelle automatique</strong> : Ajustement automatique du nombre d'instances</li>
+                        <li>🌐 <strong>Load balancing</strong> : Distribution intelligente du trafic</li>
+                        <li>🔐 <strong>Gestion des secrets</strong> : Stockage sécurisé des informations sensibles</li>
+                    </ul>
+                </div>
+
+                <h2>Les concepts fondamentaux</h2>
+
+                <h3>1. Cluster</h3>
+                <p>Un cluster Kubernetes est un ensemble de machines (nœuds) qui exécutent des applications conteneurisées.</p>
+
+                <h3>2. Pod</h3>
+                <p>Le Pod est la plus petite unité déployable dans Kubernetes. Il contient un ou plusieurs conteneurs étroitement liés.</p>
+
+                <pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: mon-app-pod
+spec:
+  containers:
+  - name: mon-app
+    image: nginx:latest
+    ports:
+    - containerPort: 80</code></pre>
+
+                <h3>3. Deployment</h3>
+                <p>Un Deployment gère les Pods et assure leur disponibilité.</p>
+
+                <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.20
+        ports:
+        - containerPort: 80</code></pre>
+
+                <h3>4. Service</h3>
+                <p>Un Service expose les Pods sur le réseau de manière stable.</p>
+
+                <pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer</code></pre>
+
+                <h2>Architecture de Kubernetes</h2>
+
+                <h3>Master Node (Control Plane)</h3>
+                <ul>
+                    <li><strong>API Server</strong> : Interface principale de Kubernetes</li>
+                    <li><strong>etcd</strong> : Base de données distribuée qui stocke l'état du cluster</li>
+                    <li><strong>Scheduler</strong> : Décide sur quels nœuds placer les Pods</li>
+                    <li><strong>Controller Manager</strong> : Gère les différents contrôleurs</li>
+                </ul>
+
+                <h3>Worker Nodes</h3>
+                <ul>
+                    <li><strong>kubelet</strong> : Agent qui communique avec l'API Server</li>
+                    <li><strong>kube-proxy</strong> : Gère le routage réseau</li>
+                    <li><strong>Container Runtime</strong> : Docker, containerd, ou CRI-O</li>
+                </ul>
+
+                <h2>Installation et premiers pas</h2>
+
+                <h3>1. Installation locale avec minikube</h3>
+                <pre><code># Installation de minikube (MacOS)
+brew install minikube
+
+# Démarrage du cluster
+minikube start
+
+# Vérification du statut
+kubectl cluster-info</code></pre>
+
+                <h3>2. Installation de kubectl</h3>
+                <pre><code># MacOS
+brew install kubectl
+
+# Vérification
+kubectl version --client</code></pre>
+
+                <h3>3. Premier déploiement</h3>
+                <pre><code># Créer un déploiement nginx
+kubectl create deployment nginx --image=nginx
+
+# Exposer le déploiement
+kubectl expose deployment nginx --port=80 --type=NodePort
+
+# Voir les pods
+kubectl get pods
+
+# Voir les services
+kubectl get services</code></pre>
+
+                <h2>Commandes essentielles</h2>
+
+                <h3>Gestion des ressources</h3>
+                <pre><code># Lister les ressources
+kubectl get pods
+kubectl get deployments
+kubectl get services
+
+# Décrire une ressource
+kubectl describe pod &lt;nom-du-pod&gt;
+
+# Voir les logs
+kubectl logs &lt;nom-du-pod&gt;
+
+# Accéder à un pod
+kubectl exec -it &lt;nom-du-pod&gt; -- /bin/bash</code></pre>
+
+                <h3>Application de configurations</h3>
+                <pre><code># Appliquer un fichier YAML
+kubectl apply -f deployment.yaml
+
+# Supprimer des ressources
+kubectl delete -f deployment.yaml</code></pre>
+
+                <h2>Exemple pratique complet</h2>
+                <p>Créons une application web simple avec base de données :</p>
+
+                <h3>1. Déploiement de la base de données</h3>
+                <pre><code># db-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:13
+        env:
+        - name: POSTGRES_DB
+          value: "monapp"
+        - name: POSTGRES_USER
+          value: "admin"
+        - name: POSTGRES_PASSWORD
+          value: "motdepasse"
+        ports:
+        - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+spec:
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432</code></pre>
+
+                <h3>2. Déploiement de l'application web</h3>
+                <pre><code># app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: mon-app:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_HOST
+          value: "postgres-service"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-service
+spec:
+  selector:
+    app: web-app
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer</code></pre>
+
+                <h3>3. Déploiement</h3>
+                <pre><code># Appliquer les configurations
+kubectl apply -f db-deployment.yaml
+kubectl apply -f app-deployment.yaml
+
+# Vérifier les déploiements
+kubectl get all</code></pre>
+
+                <h2>Bonnes pratiques pour débuter</h2>
+
+                <h3>1. Organisation des fichiers</h3>
+                <pre><code>k8s/
+├── namespace.yaml
+├── configmaps/
+├── secrets/
+├── deployments/
+└── services/</code></pre>
+
+                <h3>2. Utilisation des namespaces</h3>
+                <pre><code>apiVersion: v1
+kind: Namespace
+metadata:
+  name: mon-app-dev</code></pre>
+
+                <h3>3. Gestion des ressources</h3>
+                <pre><code>spec:
+  containers:
+  - name: mon-app
+    image: nginx
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi</code></pre>
+
+                <h3>4. Health checks</h3>
+                <pre><code>spec:
+  containers:
+  - name: mon-app
+    image: nginx
+    livenessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 30
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /ready
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 5</code></pre>
+
+                <h2>Outils utiles</h2>
+
+                <h3>1. Lens</h3>
+                <p>Interface graphique pour Kubernetes - excellent pour débuter.</p>
+
+                <h3>2. k9s</h3>
+                <p>Interface en ligne de commande interactive pour Kubernetes.</p>
+                <pre><code># Installation
+brew install k9s
+
+# Utilisation
+k9s</code></pre>
+
+                <h3>3. Helm</h3>
+                <p>Gestionnaire de packages pour Kubernetes.</p>
+                <pre><code># Installation
+brew install helm
+
+# Recherche de charts
+helm search hub nginx
+
+# Installation d'un chart
+helm install my-nginx bitnami/nginx</code></pre>
+
+                <h2>Ressources pour approfondir</h2>
+
+                <div class="highlight-box">
+                    <h3>Documentation officielle</h3>
+                    <ul>
+                        <li><a href="https://kubernetes.io/fr/docs/" target="_blank">kubernetes.io</a></li>
+                        <li><a href="https://kubernetesbyexample.com/" target="_blank">Kubernetes by Example</a></li>
+                    </ul>
+
+                    <h3>Tutoriels interactifs</h3>
+                    <ul>
+                        <li>Katacoda Kubernetes</li>
+                        <li>Play with Kubernetes</li>
+                    </ul>
+
+                    <h3>Livres recommandés</h3>
+                    <ul>
+                        <li>"Kubernetes in Action" par Marko Lukša</li>
+                        <li>"Kubernetes: Up and Running" par Kelsey Hightower</li>
+                    </ul>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>Kubernetes peut sembler intimidant au début, mais c'est un outil puissant qui révolutionne la façon dont nous déployons et gérons les applications. Commencez petit avec minikube, expérimentez avec les concepts de base, et progressivement vous découvrirez toute la puissance de cette plateforme.</p>
+
+                <p>L'apprentissage de Kubernetes est un investissement qui en vaut la peine pour tout professionnel de l'IT souhaitant évoluer vers le DevOps ou l'administration d'infrastructures modernes.</p>
+
+                <div class="article-nav">
+                    <a href="../index.html#blog" class="btn btn-primary">← Retour au blog</a>
+                    <a href="ansible-automatisation.html" class="btn btn-secondary">Article suivant →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tech & DevOps</h3>
+                    <p>
+                        Un blog technique où je partage ma passion pour l'informatique 
+                        et les pratiques DevOps modernes.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#accueil">Accueil</a></li>
+                        <li><a href="../index.html#metier">Le Métier</a></li>
+                        <li><a href="../index.html#devops">DevOps</a></li>
+                        <li><a href="../index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@tech-devops-blog.fr</p>
+                    <p>LinkedIn: /in/technicien-devops</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tech & DevOps. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

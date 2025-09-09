@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="À propos – Mon parcours, ma passion pour l'informatique et la cybersécurité">
+  <title>À propos | Tech & DevOps</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .about-hero {
+      padding: 6rem 0 3rem;
+      background: var(--gradient-primary);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero h1 { font-size: 2.5rem; margin-bottom: .75rem; text-shadow: 0 2px 6px rgba(0,0,0,0.35); }
+    .about-hero p { color: #0f172a; font-size: 1.15rem; line-height: 1.8; }
+
+    .about-content { padding: 3rem 0; }
+    .about-content p { color: var(--text-color); font-size: 1.08rem; line-height: 1.85; }
+    .about-content ul { font-size: 1.05rem; line-height: 1.85; }
+
+    /* Belle couleur de fond pour la page À propos */
+    .about-page {
+      background: var(--gradient-cool);
+      background-attachment: fixed;
+    }
+
+    /* Compétences (pills) - effet survol lisible */
+    .pill { transition: all .25s ease; border: 1px solid transparent; }
+    .pill:hover { background: #ffffff; color: #0f172a; border-color: var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+    /* Objectifs centrés */
+    .objectifs { text-align: center; margin-top: 1.5rem; }
+    .objectifs h2 { margin-bottom: .75rem; }
+    .objectifs ul { display: inline-block; text-align: left; margin: 0 auto; }
+
+    /* Effet de survol pour le paragraphe d'intro */
+    .fun-intro { transition: color .25s ease; }
+    .fun-intro:hover { color: #0f172a !important; }
+
+    /* Effets de survol lisibles pour l'ensemble du contenu */
+    .about-content p,
+    .about-content li,
+    .timeline-item p {
+      transition: color .25s ease;
+    }
+    .about-content p:hover,
+    .about-content li:hover,
+    .timeline-item p:hover {
+      color: #0f172a;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .about-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    .about-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+    .pill {
+      display: inline-block; margin: .3rem .3rem .3rem 0; padding: .35rem .75rem;
+      background: var(--light-color); border-radius: 999px; font-weight: 500;
+    }
+    .timeline { border-left: 3px solid var(--border-color); padding-left: 1rem; }
+    .timeline-item { margin: 1rem 0; }
+    .timeline-item h3 { margin-bottom: .25rem; color: var(--secondary-color); }
+
+    .quote {
+      background: var(--gradient-cool);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1.25rem;
+      border-radius: var(--border-radius);
+      margin: 1.25rem 0;
+      color: #0f172a; /* bleu très foncé pour contraste */
+    }
+
+    @media (max-width: 992px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="about-page">
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none;"><span class="brand-tech">Tech</span><span class="brand-ops">&</span><span class="brand-devops">DevOps</span></a></h1>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item"><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="index.html#metier" class="nav-link">Le Métier</a></li>
+          <li class="nav-item"><a href="index.html#devops" class="nav-link">DevOps</a></li>
+          <li class="nav-item"><a href="index.html#competences" class="nav-link">Compétences</a></li>
+          <li class="nav-item"><a href="index.html#blog" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">À propos</a></li>
+          <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="about-hero">
+      <div class="container">
+        <h1>À propos de moi</h1>
+        <p>👋 Salut, moi c’est le gars qui démonte un PC pour “voir” et qui remonte un cluster pour “apprendre” 😄. DevOps addict, cybersécurité en snack, et tests en dessert. Toujours prêt à casser (puis réparer) pour comprendre 🍕⚙️🛡️</p>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="container about-grid">
+        <div class="about-section about-card">
+          <h2>Mon parcours</h2>
+          <p class="fun-intro">
+            J’ai commencé comme beaucoup: des tickets, des câbles, des surprises. Puis j’ai découvert l’automatisation
+            et ma vie a changé: moins de “clic-clic”, plus de “script-script”. Aujourd’hui, je marie <strong>DevOps</strong>
+            et <strong>cybersécurité</strong> pour que les systèmes soient à la fois rapides, fiables… et pas faciles à hacker 😉.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Support & Maintenance</h3>
+              <p>🔧 Résolution d’incidents, câbles récalcitrants et imprimantes capricieuses. Pro tips: le redémarrage marche (parfois).</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Automatisation & DevOps</h3>
+              <p>🤖 Scripts, CI/CD et containers: j’ai remplacé la caféine par des pipelines. "Si c’est répétitif, c’est scriptable".</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Cybersécurité</h3>
+              <p>🛡️ Hardening, monitoring, et tests de sécurité (amicaux). Pare-feu allumé, logs surveillés, paranoïa contrôlée.</p>
+            </div>
+          </div>
+
+          <div class="quote">
+            <strong>Ma philosophie:</strong> <em>tester → casser (un peu) → comprendre → améliorer</em>. 
+            "J’aime tester" n’est pas qu’une phrase, c’est mon super-pouvoir 🧪⚡
+          </div>
+
+          <h2>Ce que j'aime tester</h2>
+          <ul>
+            <li>🐳 Containers & orchestration: Docker, Kubernetes (et leur humour parfois… imprévisible)</li>
+            <li>⚙️ Automatisation: Ansible, Terraform, GitHub Actions (au revoir les tâches manuelles)</li>
+            <li>📊 Observabilité: Prometheus, Grafana, ELK (parce que les logs ne mentent jamais… enfin presque)</li>
+            <li>🔒 SecOps: scans, hardening, supervision, backup & restore (la paranoïa utile)</li>
+          </ul>
+        </div>
+
+        <aside class="about-card">
+          <h2>Compétences (celles qui sauvent des nuits)</h2
+          <div>
+            <span class="pill">Linux</span>
+            <span class="pill">Réseaux</span>
+            <span class="pill">Docker</span>
+            <span class="pill">Kubernetes</span>
+            <span class="pill">Ansible</span>
+            <span class="pill">Terraform</span>
+            <span class="pill">Git/GitHub</span>
+            <span class="pill">CI/CD</span>
+            <span class="pill">Sécurité</span>
+          </div>
+
+          <div class="objectifs">
+            <h2>Objectifs (version honnête)</h2>
+            <ul>
+              <li>Automatiser tout ce qui bouge (et parfois ce qui ne bouge pas)</li>
+              <li>Mettre la sécurité au menu dès l’entrée (DevSecOps délicieux)</li>
+              <li>Partager des fails et des wins pour apprendre ensemble 🚀</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Tech & DevOps</h3>
+          <p>Un blog technique où je partage ma passion pour l'informatique et les pratiques DevOps modernes.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#accueil">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="index.html#devops">DevOps</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: contact@tech-devops-blog.fr</p>
+          <p>LinkedIn: /in/technicien-devops</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tech & DevOps. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

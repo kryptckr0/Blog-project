@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog sur le métier de technicien informatique et passion pour le DevOps">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tech-devops-blog.fr/">
+    <meta property="og:title" content="Tech & DevOps | Blog d'un Technicien Informatique">
+    <meta property="og:description" content="Blog technique où je partage ma passion pour l'informatique et les pratiques DevOps modernes.">
+    <meta property="og:image" content="https://tech-devops-blog.fr/images/hero/tech-background.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tech-devops-blog.fr/">
+    <meta property="twitter:title" content="Tech & DevOps | Blog d'un Technicien Informatique">
+    <meta property="twitter:description" content="Blog technique où je partage ma passion pour l'informatique et les pratiques DevOps modernes.">
+    <meta property="twitter:image" content="https://tech-devops-blog.fr/images/hero/tech-background.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
+    
+    <title>Tech & DevOps | Blog d'un Technicien Informatique</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1><span class="brand-tech">Tech</span><span class="brand-ops">&</span><span class="brand-devops">DevOps</span></h1>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#accueil" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#metier" class="nav-link">Le Métier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#devops" class="nav-link">DevOps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#competences" class="nav-link">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Section Hero -->
+        <section id="accueil" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Technicien Informatique & Passionné DevOps</h2>
+                    <p class="hero-subtitle">
+                        Bienvenue sur mon blog où je partage mon expérience dans l'univers IT, 
+                        mes découvertes DevOps et les dernières tendances technologiques.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#metier" class="btn btn-primary">Découvrir le métier</a>
+                        <a href="#devops" class="btn btn-secondary">Ma passion DevOps</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <span class="code-title">deployment.yml</span>
+                        </div>
+                        <div class="code-content">
+                            <code>
+apiVersion: apps/v1<br>
+kind: Deployment<br>
+metadata:<br>
+&nbsp;&nbsp;name: tech-blog<br>
+spec:<br>
+&nbsp;&nbsp;replicas: 3<br>
+&nbsp;&nbsp;selector:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;matchLabels:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app: blog
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Le Métier -->
+        <section id="metier" class="section">
+            <div class="container">
+                <h2 class="section-title">Le Métier de Technicien Informatique</h2>
+                <div class="section-intro">
+                    <p>
+                        Un métier passionnant au cœur de la transformation numérique, 
+                        où chaque jour apporte son lot de défis techniques et humains.
+                    </p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🔧</div>
+                        <h3>Maintenance & Support</h3>
+                        <p>
+                            Diagnostic, réparation et maintenance des équipements informatiques. 
+                            Support utilisateur et résolution d'incidents.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🌐</div>
+                        <h3>Réseaux & Infrastructure</h3>
+                        <p>
+                            Configuration et administration des réseaux, serveurs et 
+                            infrastructures IT d'entreprise.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔒</div>
+                        <h3>Sécurité & Sauvegarde</h3>
+                        <p>
+                            Mise en place de solutions de sécurité, gestion des sauvegardes 
+                            et protection des données.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Monitoring & Optimisation</h3>
+                        <p>
+                            Surveillance des systèmes, analyse des performances et 
+                            optimisation des ressources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section DevOps -->
+        <section id="devops" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Ma Passion pour DevOps</h2>
+                <div class="section-intro">
+                    <p>
+                        DevOps n'est pas qu'une méthodologie, c'est une philosophie qui transforme 
+                        la façon dont nous développons, déployons et maintenons les applications.
+                    </p>
+                </div>
+                <div class="devops-pipeline">
+                    <div class="pipeline-step">
+                        <div class="step-icon">💻</div>
+                        <h3>Code</h3>
+                        <p>Développement collaboratif avec Git</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-icon">🔨</div>
+                        <h3>Build</h3>
+                        <p>CI/CD avec GitHub Actions</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-icon">🧪</div>
+                        <h3>Test</h3>
+                        <p>Tests automatisés et qualité</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-icon">🚀</div>
+                        <h3>Deploy</h3>
+                        <p>Déploiement avec Docker & K8s</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-icon">📊</div>
+                        <h3>Monitor</h3>
+                        <p>Observabilité et métriques</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="competences" class="section">
+            <div class="container">
+                <h2 class="section-title">Compétences & Technologies</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Infrastructure & Cloud</h3>
+                        <div class="tech-tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Ansible</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Monitoring & Logs</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Prometheus</span>
+                            <span class="tag">Grafana</span>
+                            <span class="tag">ELK Stack</span>
+                            <span class="tag">Datadog</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>CI/CD & DevOps</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Jenkins</span>
+                            <span class="tag">GitLab CI</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">ArgoCD</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Systèmes & Réseaux</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Linux</span>
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">VMware</span>
+                            <span class="tag">Cisco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Blog -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title">Articles Récents</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-image blog-card-kubernetes"></div>
+                        <div class="blog-meta">
+                            <span class="blog-date">15 Déc 2024</span>
+                            <span class="blog-category">DevOps</span>
+                        </div>
+                        <h3>Introduction à Kubernetes pour les débutants</h3>
+                        <p>
+                            Découvrez les concepts fondamentaux de Kubernetes et pourquoi 
+                            cette technologie révolutionne le déploiement d'applications.
+                        </p>
+                        <a href="articles/kubernetes-debutants.html" class="read-more">Lire la suite →</a>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-image blog-card-ansible"></div>
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Déc 2024</span>
+                            <span class="blog-category">Infrastructure</span>
+                        </div>
+                        <h3>Automatiser la gestion des serveurs avec Ansible</h3>
+                        <p>
+                            Comment j'utilise Ansible au quotidien pour automatiser les tâches 
+                            d'administration et gagner en efficacité.
+                        </p>
+                        <a href="articles/ansible-automatisation.html" class="read-more">Lire la suite →</a>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-image blog-card-career"></div>
+                        <div class="blog-meta">
+                            <span class="blog-date">5 Déc 2024</span>
+                            <span class="blog-category">Carrière</span>
+                        </div>
+                        <h3>Évoluer de technicien à DevOps Engineer</h3>
+                        <p>
+                            Mon parcours et mes conseils pour réussir la transition vers 
+                            les métiers DevOps depuis une base technique solide.
+                        </p>
+                        <a href="articles/evolution-devops.html" class="read-more">Lire la suite →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tech & DevOps</h3>
+                    <p>
+                        Un blog technique où je partage ma passion pour l'informatique 
+                        et les pratiques DevOps modernes.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="#metier">Le Métier</a></li>
+                        <li><a href="#devops">DevOps</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@tech-devops-blog.fr</p>
+                    <p>LinkedIn: /in/technicien-devops</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tech & DevOps. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
