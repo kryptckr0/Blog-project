@@ -2,8 +2,8 @@
 
 # Configuration du déploiement
 # Modifiez ces valeurs avec vos vraies informations :
-VPS_USER="kryptckr"          # ou votre nom d'utilisateur
-VPS_HOST="51.38.38.166" # IP de votre VPS
+VPS_USER=""          # ou votre nom d'utilisateur
+VPS_HOST="" # IP de votre VPS
 VPS_PATH="/var/www/html" # Chemin sur votre VPS
 LOCAL_PATH="."
 
