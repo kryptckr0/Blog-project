@@ -2,9 +2,6 @@
 
 > **Blog personnel d'un technicien informatique passionné par DevOps**
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Ftech-devops-blog.fr)](https://tech-devops-blog.fr)
-[![GitHub](https://img.shields.io/github/license/kryptckr0/blog-technicien-informatique)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/kryptckr0/blog-technicien-informatique)](https://github.com/kryptckr0/blog-technicien-informatique/commits/main)
 
 ## ✨ Aperçu
 
